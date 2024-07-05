@@ -1,0 +1,40 @@
+{% extends 'nav.html' %}
+{% block nav %}
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 60px;
+        }
+        form {
+            width: 500px;
+            height: 250px;
+            border-radius: 10px;
+        }
+        h1 {
+            font-weight: 800;
+        }
+    </style>
+
+    <body>
+        <div class="container">
+            <div>
+                <h1 class="text-info">Login</h1>
+            </div>
+            <form action="" class="mt-2 border shadow p-4 " method="post">
+                {% csrf_token %}
+                <label for="name" class="d-block mb-3">
+                    name:
+                    <input type="text" placeholder="enter your name" class="form-control" name="uname">
+                </label>
+                <label for="phone" class="d-block ">
+                    password:
+                    <input type="password" placeholder="enter your password" class="form-control" name="password">
+                <div>
+                    <button class="btn btn-success mt-3" type="submit" name="pass" >submit</button>
+                </div>
+            </form>
+        </div>
+ {% endblock nav%}

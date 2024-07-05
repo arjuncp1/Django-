@@ -1,0 +1,42 @@
+{% extends 'homenav.html' %}
+
+{% block nav %}
+<style>
+    .container {
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+h1 {
+    font-weight: 900;
+}
+
+
+</style>
+
+<div class="container">
+    <h1>Medicine View</h1>
+        
+        <div class="row">
+            {% for i in medicine %}
+            <div class="card shadow my-3 mx-4" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{i.mname}}</h5>
+                  <p class="card-text">Price: {{i.price}}</p>
+                  <p class="card-text">Expiry Date: {{i.expiry_date}}</p>
+                  <p class="card-text">Pharmacy: {{i.pharma_company}}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        
+</div>
+
+
+
+{% endblock nav %}
